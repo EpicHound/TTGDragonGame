@@ -11,8 +11,20 @@ public class StateManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        switch (currentState)
+        {
+            case State.Idle:
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    currentState = State.Aiming;
+                }
+                break;
+            case State.Shooting:
+                break;
+            case State.Aiming:
+                break;
+        }
+    }
 
     public State GetState()
     {
