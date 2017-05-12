@@ -31,11 +31,11 @@ public class dragonAi : MonoBehaviour {
     {
         switch (stateManager.GetState())
         {
-            case StateManager.State.Idle:
+            case StateManager.State.Idle:     
                 startAim = true;
                 break;
             case StateManager.State.Shooting:
-                startAim = true;
+                fireEffect.gameObject.SetActive(true);
                 Shooting();
                 break;
             case StateManager.State.Aiming:
@@ -43,22 +43,74 @@ public class dragonAi : MonoBehaviour {
                 break;
         }
 	}
-
-    private void FixedUpdate()
-    {
-        
-      
-    }
     Quaternion desiredRotQ;
     bool startAim = false;
     void Aiming()
     {   
         HeadRotate();      
     }
+    public ParticleSystem fireEffect;
+   public  float maxFireLength;
+    bool started = false;
+    List<GameObject> enemies = new List<GameObject>();
     void Shooting()
     {
+        float pressure = Fizzyo.FizzyoDevice.Instance().Pressure();
+        if (enemies == null)
+        {
+         enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
+        }
+        else
+        {
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                if (enemyIsHit(enemies[i], pressure))
+                {
+                    //kill
+                }
+                else
+                {
+                    enemies.RemoveAt(i);
+                    i -= 1;
+                }
+            }
+        }
+       
+        
+        if(pressure> maxFizzyoPressure / 2)
+        {
+            started = true;
+        }
+        fireEffect.startLifetime = (pressure / maxFizzyoPressure) * maxFireLength;
 
+        
+
+        if(started == true && pressure < maxFizzyoPressure / 3)
+        {
+            fireEffect.gameObject.SetActive(false);
+            stateManager.changeState(StateManager.State.Aiming);
+            startAim = true;
+            started = false;
+        }
     }
+    
+
+    bool enemyIsHit(GameObject objToSee, float CloseDistanceRange)
+    {
+        RaycastHit hit;
+        var rayDirection = objToSee.transform.position - transform.position;
+
+        if ((Vector3.Angle(rayDirection, transform.forward)) < 20 && (Vector3.Distance(transform.position, objToSee.transform.position) <= CloseDistanceRange))
+        {
+            //Debug.Log("close");
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     float StartTime;
     Quaternion startPosition;
     void HeadRotate()
