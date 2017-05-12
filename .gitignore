@@ -37,3 +37,5 @@ sysinfo.txt
 *.log
 Game/Library/shadercompiler-UnityShaderCompiler.exe0.log
 Game/Library/ScriptAssemblies/Assembly-CSharp.dll
+Game/Library/assetDatabase3
+*.meta
