@@ -28,5 +28,12 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
-Game\Temp\
+/Game/Temp
+/Game/Library/metadata
+/Game/Library/UnityAssemblies
+/Game/Library/ShaderCache
+/Game/Library/ShaderCache.db
+/Game/Library/ScriptAssemblies
 *.log
+Game/Library/shadercompiler-UnityShaderCompiler.exe0.log
+Game/Library/ScriptAssemblies/Assembly-CSharp.dll
