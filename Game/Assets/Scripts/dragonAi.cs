@@ -9,14 +9,18 @@ public class dragonAi : MonoBehaviour {
     public float desiredRotation;
     private Quaternion initialRotation;
     public float timeToLerp = 1f;
+   
     //fizyo stuff
     public float maxFizzyoPressure = 0.5f;
+
+   
     void Start () {
         //load our sensor calibration if already set
         if (PlayerPrefs.HasKey("Max Fizzyo Pressure"))
         {
             maxFizzyoPressure = PlayerPrefs.GetFloat("Max Fizzyo Pressure");
             Debug.Log("Set max fizzyo pressure val to: " + maxFizzyoPressure);
+            
         }
 
 
@@ -25,9 +29,11 @@ public class dragonAi : MonoBehaviour {
         desiredRotQ = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, desiredRotation);
         startPosition = transform.rotation;
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    
+
+    // Update is called once per frame
+    void Update ()
     {
         switch (stateManager.GetState())
         {
@@ -42,7 +48,9 @@ public class dragonAi : MonoBehaviour {
                 Aiming();
                 break;
         }
-	}
+        
+
+    }
     Quaternion desiredRotQ;
     bool startAim = false;
     void Aiming()
@@ -53,9 +61,11 @@ public class dragonAi : MonoBehaviour {
    public  float maxFireLength;
     bool started = false;
     List<GameObject> enemies = new List<GameObject>();
+   public bool breathComplete = false;
     void Shooting()
     {
         float pressure = Fizzyo.FizzyoDevice.Instance().Pressure();
+        
         if (enemies == null)
         {
          enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
@@ -77,15 +87,16 @@ public class dragonAi : MonoBehaviour {
         }
        
         
-        if(pressure> maxFizzyoPressure / 2)
+        if(stateManager.breath.IsExhaling && started == false)
         {
+             breathComplete = false;
             started = true;
         }
         fireEffect.startLifetime = (pressure / maxFizzyoPressure) * maxFireLength;
 
         
 
-        if(started == true && pressure < maxFizzyoPressure / 3)
+        if(started == true && breathComplete == true)
         {
             fireEffect.gameObject.SetActive(false);
             stateManager.changeState(StateManager.State.Aiming);
@@ -94,7 +105,10 @@ public class dragonAi : MonoBehaviour {
         }
     }
     
+    void analyzePressure(float Pressure)
+    {
 
+    }
     bool enemyIsHit(GameObject objToSee, float CloseDistanceRange)
     {
         RaycastHit hit;
