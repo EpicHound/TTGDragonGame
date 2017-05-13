@@ -13,6 +13,8 @@ public class wizardAi : MonoBehaviour {
     public Camera cam;
 	// Use this for initialization
 	void Start () {
+      state =  GameObject.Find("/GlobalController").GetComponent<StateManager>();
+        cam = GameObject.Find("/Main Camera").GetComponent<Camera>();
         min = cam.ScreenToWorldPoint(new Vector3(0, cam.pixelHeight - 10, cam.nearClipPlane));
         max = cam.ScreenToWorldPoint(new Vector3(cam.pixelWidth -10, 200, cam.nearClipPlane));
         moving = true;

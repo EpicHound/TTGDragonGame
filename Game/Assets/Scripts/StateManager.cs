@@ -8,6 +8,7 @@ public class StateManager : MonoBehaviour {
     public Text debugTextPressure;
     public dragonAi ai;
     float maxBreathPressure  = 0.6f;
+    public GameObject wizard;
     float maxBreathLength = 5f;
     // public Fizzyo.BreathRecogniser breath = new Fizzyo.BreathRecogniser(PlayerPrefs.GetFloat("Max Fizzyo Pressure"), PlayerPrefs.GetFloat("Max Fizzyo Length"));
     public Fizzyo.BreathRecogniser breath = new Fizzyo.BreathRecogniser(0.6f, 5);
@@ -43,13 +44,22 @@ public class StateManager : MonoBehaviour {
                 }
                 break;
             case State.Moving:
+                makeEnemies();
                 break;
         }
         debugTextPressure.text = Fizzyo.FizzyoDevice.Instance().Pressure().ToString();
         breath.AddSample(Time.deltaTime, Fizzyo.FizzyoDevice.Instance().Pressure());
 
     }
-
+    void makeEnemies()
+    {
+        int number = Random.Range(3, 8);
+        for (int i = 0; i <= number; i++)
+        {
+            Instantiate(wizard);
+        }
+        currentState = State.Aiming;  
+    }
     public void Shooting()
     {
        

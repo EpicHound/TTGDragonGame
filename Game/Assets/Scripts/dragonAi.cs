@@ -81,7 +81,7 @@ public class dragonAi : MonoBehaviour {
         if(started == true && breathComplete == true)
         {
             fireEffect.gameObject.SetActive(false);
-            stateManager.changeState(StateManager.State.Aiming);
+            stateManager.changeState(StateManager.State.Moving);
             startAim = true;
             started = false;
         }
