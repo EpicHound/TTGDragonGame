@@ -16,6 +16,7 @@ public class wizardAi : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
       state =  GameObject.Find("/GlobalController").GetComponent<StateManager>();
+       Score = GameObject.Find("/GlobalController").GetComponent<ScoreManager>();
         cam = GameObject.Find("/Main Camera").GetComponent<Camera>();
         min = cam.ScreenToWorldPoint(new Vector3(0, cam.pixelHeight - 10, cam.nearClipPlane));
         max = cam.ScreenToWorldPoint(new Vector3(cam.pixelWidth -10, 200, cam.nearClipPlane));
@@ -34,8 +35,10 @@ public class wizardAi : MonoBehaviour {
 	}
    public void killed()
     {
+        gameObject.GetComponent<Collider>().enabled = false;
         transform.tag = "Dead";
         anim.SetBool("isAlive", false);
+        
         col.enabled = false;
         Score.UpdateScore();
         StartCoroutine(fall());

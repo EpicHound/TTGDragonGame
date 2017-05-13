@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: b0b5521a48410e64b9c43d33090a04c7
-timeCreated: 1494659829
+guid: c00b87d2c6aa101459b87fdad8ae3f62
+timeCreated: 1494658022
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: dragon-red_0
-    21300002: dragon-red_1
-    21300004: dragon-red_2
-    21300006: dragon-red_3
+    21300000: dragon-gold_0
+    21300002: dragon-gold_1
+    21300004: dragon-gold_2
+    21300006: dragon-gold_3
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -74,20 +74,20 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dragon-red_0
+      name: dragon-gold_0
       rect:
         serializedVersion: 2
         x: 847
-        y: 756
+        y: 758
         width: 49
-        height: 147
+        height: 145
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: dragon-red_1
+      name: dragon-gold_1
       rect:
         serializedVersion: 2
         x: 361
@@ -100,7 +100,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: dragon-red_2
+      name: dragon-gold_2
       rect:
         serializedVersion: 2
         x: 794
@@ -113,7 +113,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: dragon-red_3
+      name: dragon-gold_3
       rect:
         serializedVersion: 2
         x: 1016
