@@ -16,7 +16,7 @@ public class Fire : MonoBehaviour {
         TimeEffect += Time.deltaTime;
         if (TimeEffect > 5)
         {
-            SceneManager.LoadScene("JetpackLevel");
+            SceneManager.LoadScene("MainWindow");
         }
 	}
 }
