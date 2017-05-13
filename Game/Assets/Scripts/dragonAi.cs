@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class dragonAi : MonoBehaviour {
     // Use this for initialization
     public Text ScoreText;
+    public Text BreathsText;
+    private int BreathsCount;
     public StateManager stateManager;
     public float angle = 90;
     public float desiredRotation;
@@ -67,22 +69,23 @@ public class dragonAi : MonoBehaviour {
     void Shooting()
     {
         float pressure = Fizzyo.FizzyoDevice.Instance().Pressure();
-        
-      
-       
-        
         if(stateManager.breath.IsExhaling && started == false)
         {
              breathComplete = false;
             started = true;
         }
         fireEffect.startLifetime = (pressure / maxFizzyoPressure) * maxFireLength;
-
-        
-
         if(started == true && breathComplete == true)
         {
             fireEffect.gameObject.SetActive(false);
+            BreathsCount += 1;
+            BreathsText.text = ("Breaths: " + BreathsCount);
+            if (BreathsCount == 5)
+            {
+                GameStart Start;
+                Start.Reset();
+                BreathsText.text = ("Breaths: " + BreathsCount);
+            }
             stateManager.changeState(StateManager.State.Moving);
             startAim = true;
             started = false;
