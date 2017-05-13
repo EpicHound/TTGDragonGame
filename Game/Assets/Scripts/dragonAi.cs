@@ -9,7 +9,7 @@ public class dragonAi : MonoBehaviour {
     public float desiredRotation;
     private Quaternion initialRotation;
     public float timeToLerp = 1f;
-   
+
     //fizyo stuff
     public float maxFizzyoPressure = 0.5f;
 
@@ -77,6 +77,7 @@ public class dragonAi : MonoBehaviour {
                 if (enemyIsHit(enemies[i], pressure))
                 {
                     //kill
+                    enemies[i].GetComponent<wizardAi>().killed();
                 }
                 else
                 {

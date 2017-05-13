@@ -11,6 +11,7 @@ public class StateManager : MonoBehaviour {
     float maxBreathLength = 5f;
     // public Fizzyo.BreathRecogniser breath = new Fizzyo.BreathRecogniser(PlayerPrefs.GetFloat("Max Fizzyo Pressure"), PlayerPrefs.GetFloat("Max Fizzyo Length"));
     public Fizzyo.BreathRecogniser breath = new Fizzyo.BreathRecogniser(0.6f, 5);
+    public Fizzyo.BreathRecogniser lastBreath;
     // Use this for initialization
     void Start () {
         
@@ -21,7 +22,6 @@ public class StateManager : MonoBehaviour {
     private void Breath_ExhalationComplete(object sender, Fizzyo.ExhalationCompleteEventArgs e)
     {
         ai.breathComplete = true;
-        
     }
 
     // Update is called once per frame
