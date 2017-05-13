@@ -12,6 +12,7 @@ public class StateManager : MonoBehaviour {
     public dragonAi ai;
     float maxBreathPressure  = 0.6f;
     public GameObject wizard;
+    public GameObject redWizard;
     float maxBreathLength = 5f;
     // public Fizzyo.BreathRecogniser breath = new Fizzyo.BreathRecogniser(PlayerPrefs.GetFloat("Max Fizzyo Pressure"), PlayerPrefs.GetFloat("Max Fizzyo Length"));
     public Fizzyo.BreathRecogniser breath;
@@ -67,6 +68,11 @@ public class StateManager : MonoBehaviour {
         for (int i = 0; i <= number; i++)
         {
             Instantiate(wizard);
+        }
+        int num = Random.Range(0, 2);
+        for (int i = 0; i <= number; i++)
+        {
+            Instantiate(redWizard);
         }
         currentState = State.Aiming;  
     }
