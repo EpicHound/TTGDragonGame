@@ -13,8 +13,8 @@ public class wizardAi : MonoBehaviour {
     public Camera cam;
 	// Use this for initialization
 	void Start () {
-     //   min = cam.ScreenToWorldPoint(new Vector3(0, cam.pixelHeight, cam.nearClipPlane));
-      //  max = cam.ScreenToWorldPoint(new Vector3(cam.pixelWidth, cam.pixelHeight, cam.nearClipPlane));
+        min = cam.ScreenToWorldPoint(new Vector3(0, cam.pixelHeight - 10, cam.nearClipPlane));
+        max = cam.ScreenToWorldPoint(new Vector3(cam.pixelWidth -10, 200, cam.nearClipPlane));
         moving = true;
         anim = GetComponent<Animator>();
         randomPos = new Vector3(Random.Range(min.x, max.x), Random.Range(min.y, max.y), 0);
@@ -33,6 +33,7 @@ public class wizardAi : MonoBehaviour {
         transform.tag = "Dead";
         anim.SetBool("isAlive", false);
         col.enabled = false;
+        StartCoroutine(fall());
     }
     bool started = false;
     bool moving;
@@ -62,7 +63,15 @@ public class wizardAi : MonoBehaviour {
         
 
     }
-    void OnParticleCollision()
+    IEnumerator fall()
+    {
+        yield return new WaitForSeconds(1f);
+        gameObject.GetComponent<Rigidbody>().isKinematic = false;
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
+    }
+
+        void OnParticleCollision()
     {
         killed();
     }
