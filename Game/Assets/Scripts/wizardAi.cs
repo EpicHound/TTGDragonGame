@@ -27,6 +27,7 @@ public class wizardAi : MonoBehaviour {
     {
         transform.tag = "Dead";
         anim.SetBool("isAlive", false);
+        Destroy(gameObject);
     }
     bool started = false;
     bool moving;
@@ -54,5 +55,11 @@ public class wizardAi : MonoBehaviour {
         }
 
         
-    } 
+
+    }
+    void OnParticleCollision()
+    {
+        killed();
+    }
+
 }

@@ -66,26 +66,33 @@ public class dragonAi : MonoBehaviour {
     {
         float pressure = Fizzyo.FizzyoDevice.Instance().Pressure();
         
-        if (enemies == null)
-        {
-         enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
-        }
-        else
-        {
-            for (int i = 0; i < enemies.Count; i++)
-            {
-                if (enemyIsHit(enemies[i], pressure))
-                {
-                    //kill
-                    enemies[i].GetComponent<wizardAi>().killed();
-                }
-                else
-                {
-                    enemies.RemoveAt(i);
-                    i -= 1;
-                }
-            }
-        }
+        //if (enemies.Count == 0)
+        //{
+        // enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
+        //}
+        //else
+        //{
+        //    for (int i = 0; i < enemies.Count; i++)
+        //    {
+        //        float length = (pressure / maxFizzyoPressure) * 10;
+        //        if(length > 10)
+        //        {
+        //            length = 10;
+        //        }
+        //        if (enemyIsHit(enemies[i],length))
+        //        {
+        //            //kill
+        //            enemies[i].GetComponent<wizardAi>().killed();
+        //            //enemies.RemoveAt(i);
+        //            //i -= 1;
+        //        }
+        //        else
+        //        {
+        //            //enemies.RemoveAt(i);
+        //            //i -= 1;
+        //        }
+        //    }
+      //  }
        
         
         if(stateManager.breath.IsExhaling && started == false)
@@ -114,10 +121,10 @@ public class dragonAi : MonoBehaviour {
     {
         RaycastHit hit;
         var rayDirection = objToSee.transform.position - transform.position;
-
-        if ((Vector3.Angle(rayDirection, transform.forward)) < 20 && (Vector3.Distance(transform.position, objToSee.transform.position) <= CloseDistanceRange))
+        Debug.DrawRay(transform.position, transform.up * CloseDistanceRange,Color.red,10);
+        if ((Vector3.Angle(transform.up, rayDirection)) < 40 && (Vector3.Distance(transform.position, objToSee.transform.position) <= CloseDistanceRange))
         {
-            //Debug.Log("close");
+            
             return true;
         }
         else
