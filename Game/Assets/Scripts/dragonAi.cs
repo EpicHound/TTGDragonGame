@@ -75,6 +75,15 @@ public class dragonAi : MonoBehaviour {
             started = true;
         }
         fireEffect.startLifetime = (pressure / maxFizzyoPressure) * maxFireLength;
+<<<<<<< HEAD
+=======
+        if (fireEffect.startLifetime > maxFireLength)
+        {
+            fireEffect.startLifetime = maxFireLength;
+        }
+        
+
+>>>>>>> origin/master
         if(started == true && breathComplete == true)
         {
             fireEffect.gameObject.SetActive(false);
