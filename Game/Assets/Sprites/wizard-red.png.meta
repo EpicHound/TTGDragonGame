@@ -1,9 +1,14 @@
 fileFormatVersion: 2
 guid: 6fc7ab2dbddd88147a8b0464db0e9168
-timeCreated: 1494614666
+timeCreated: 1494679268
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: wizard-red_0
+    21300002: wizard-red_1
+    21300004: wizard-red_2
+    21300006: wizard-red_3
+    21300008: wizard-red_4
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -34,7 +39,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -68,7 +73,72 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: wizard-red_0
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 176
+        width: 336
+        height: 1140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wizard-red_1
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 908
+        width: 211
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wizard-red_2
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 908
+        width: 211
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wizard-red_3
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 583
+        width: 428
+        height: 510
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wizard-red_4
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 27
+        width: 703
+        height: 825
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

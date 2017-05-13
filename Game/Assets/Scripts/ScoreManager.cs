@@ -9,12 +9,13 @@ public class ScoreManager : MonoBehaviour {
     private string TextOutput = "Score: 0";
 	void Start ()
     {
-        
+        CurrentScore = PlayerPrefs.GetInt("CurrentScore");
 	}
 	public void UpdateScore()
     {
         CurrentScore += 50;
         TextOutput = ("Score: " + CurrentScore);
         ScoreText.text = TextOutput;
+        PlayerPrefs.SetInt("CurrentScore",CurrentScore);
     }
 }

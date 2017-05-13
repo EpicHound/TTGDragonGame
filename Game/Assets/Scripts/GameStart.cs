@@ -20,6 +20,8 @@ public class GameStart : MonoBehaviour
         {
             case "JetpackLevel":
                 SceneManager.LoadScene("IceLevel");
+                Manager = GameObject.Find("/GlobalController").GetComponent<ScoreManager>();
+                PlayerPrefs.SetFloat("CurrentScore", Manager.CurrentScore);
                 break;
             case "IceLevel":
                 SceneManager.LoadScene("Forest");

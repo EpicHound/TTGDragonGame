@@ -70,7 +70,7 @@ public class StateManager : MonoBehaviour {
             Instantiate(wizard);
         }
         int num = Random.Range(0, 2);
-        for (int i = 0; i <= number; i++)
+        for (int i = 0; i <= num; i++)
         {
             Instantiate(redWizard);
         }
