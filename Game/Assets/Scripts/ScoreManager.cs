@@ -9,11 +9,12 @@ public class ScoreManager : MonoBehaviour {
     private string TextOutput = "Score: 0";
 	void Start ()
     {
-        ScoreText.text = TextOutput;
+        
 	}
 	public void UpdateScore()
     {
         CurrentScore += 50;
         TextOutput = ("Score: " + CurrentScore);
-	}
+        ScoreText.text = TextOutput;
+    }
 }
