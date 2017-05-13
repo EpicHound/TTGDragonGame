@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainWindowAdvance : MonoBehaviour
+public class Move1stLevel : MonoBehaviour
 {
     private Fizzyo.BreathRecogniser BreathRecognise;
-	void Start ()
+    void Start()
     {
-		
-	}
-	void Update ()
+
+    }
+    void Update()
     {
-		if(Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
-            SceneManager.LoadScene("Info");
+            SceneManager.LoadScene("JetpackLevel");
         }
-	}
+    }
 }
