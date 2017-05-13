@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class StateManager : MonoBehaviour {
     State currentState;
+    public ScoreManager Score;
     public Text debugTextPressure;
+    public Text ScoreText;
+    public int CurrentScore = 0;
     public dragonAi ai;
     float maxBreathPressure  = 0.6f;
     public GameObject wizard;
@@ -23,6 +26,10 @@ public class StateManager : MonoBehaviour {
     private void Breath_ExhalationComplete(object sender, Fizzyo.ExhalationCompleteEventArgs e)
     {
         ai.breathComplete = true;
+        if (e.IsBreathGood)
+        {
+            Score.UpdateScore();
+        }
     }
 
     // Update is called once per frame

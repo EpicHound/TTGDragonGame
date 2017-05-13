@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class wizardAi : MonoBehaviour {
     public StateManager state;
+    public ScoreManager Score;
     public float timeToLerp;
     public Vector3 min;
     public Vector3 max;
@@ -35,6 +37,7 @@ public class wizardAi : MonoBehaviour {
         transform.tag = "Dead";
         anim.SetBool("isAlive", false);
         col.enabled = false;
+        Score.UpdateScore();
         StartCoroutine(fall());
     }
     bool started = false;

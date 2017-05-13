@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class dragonAi : MonoBehaviour {
     // Use this for initialization
-   public StateManager stateManager;
+    public Text ScoreText;
+    public StateManager stateManager;
     public float angle = 90;
     public float desiredRotation;
     private Quaternion initialRotation;
@@ -98,7 +100,6 @@ public class dragonAi : MonoBehaviour {
         Debug.DrawRay(transform.position, transform.up * CloseDistanceRange,Color.red,10);
         if ((Vector3.Angle(transform.up, rayDirection)) < 40 && (Vector3.Distance(transform.position, objToSee.transform.position) <= CloseDistanceRange))
         {
-            
             return true;
         }
         else
