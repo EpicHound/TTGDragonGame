@@ -32,7 +32,9 @@ public class purchase : MonoBehaviour {
         {
             if(PlayerPrefs.GetInt("Coins") >= Price)
             {
-                Price -= PlayerPrefs.GetInt("Coins");
+                int newCoins = PlayerPrefs.GetInt("Coins") - Price;
+                PlayerPrefs.SetInt("Coins", newCoins);
+                GetComponent<SpriteRenderer>().sprite = switchSprite;
                 PlayerPrefs.SetInt("Selected Skin", skinNumber);
                 PlayerPrefs.SetInt("skin" + skinNumber + "isBought", 1);
             }

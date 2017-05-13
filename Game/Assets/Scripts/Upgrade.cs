@@ -9,14 +9,14 @@ public class Upgrade : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        CurrentCoins = PlayerPrefs.GetInt("Coins", 19);
+        CurrentCoins = PlayerPrefs.GetInt("Coins");
         Text.text = ("You Have: " + CurrentCoins + " Coins."); 	
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        PlayerPrefs.SetInt("Coins", CurrentCoins);
+        CurrentCoins = PlayerPrefs.GetInt("Coins");
         Text.text = ("You Have: " + CurrentCoins + " Coins.");
     }
 }
