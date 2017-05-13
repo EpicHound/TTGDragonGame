@@ -6,16 +6,17 @@ using UnityEngine.SceneManagement;
 public class NextLevel : MonoBehaviour
 {
     private Fizzyo.BreathRecogniser BreathRecognise;
-    public string levelname;
+    public string levelname ="";
 	void Start ()
     {
-		
-	}
+
+    }
 	void Update ()
-    {
-		if(Input.GetButtonDown("Fire1"))
-        {
-            SceneManager.LoadScene(levelname);
-        }
+    { 
+
 	}
+    void OnMouseDown()
+    {
+        SceneManager.LoadScene(levelname);
+    }
 }
