@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameStart : MonoBehaviour
@@ -12,12 +13,22 @@ public class GameStart : MonoBehaviour
         {
             Destroy(Objects);
         }
-        GameObject[] Backgrounds = GameObject.FindGameObjectsWithTag("Background");
-        int Show = (Random.Range(1, Backgrounds.GetLength(0))) - 1;
-        foreach (GameObject Background in Backgrounds)
+        Scene CurrentScene = SceneManager.GetActiveScene();
+        string Name = CurrentScene.name;
+        switch (Name)
         {
-            Background.SetActive(false);
+            case "JetpackLevel":
+                SceneManager.LoadScene("IceLevel");
+                break;
+            case "IceLevel":
+                SceneManager.LoadScene("Forest");
+                break;
+            case "Forest":
+                SceneManager.LoadScene("Lava");
+                break;
+            case "Lava":
+                SceneManager.LoadScene("HiScore");
+                break;
         }
-        Backgrounds[Show].SetActive(true);
     }
 }

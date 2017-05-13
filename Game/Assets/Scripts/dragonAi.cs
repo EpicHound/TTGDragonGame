@@ -89,6 +89,7 @@ public class dragonAi : MonoBehaviour {
             if (BreathsCount == 5)
             {
                 GameObject.Find("/GlobalController").GetComponent<GameStart>().Reset();
+                BreathsCount = 0;
                 BreathsText.text = ("Breaths: " + BreathsCount);
             }
             stateManager.changeState(StateManager.State.Moving);
