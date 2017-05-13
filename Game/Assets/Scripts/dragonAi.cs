@@ -7,6 +7,7 @@ public class dragonAi : MonoBehaviour {
     // Use this for initialization
     public Text ScoreText;
     public Text BreathsText;
+    public GameStart StartGame;
     private int BreathsCount;
     public StateManager stateManager;
     public float angle = 90;
@@ -18,7 +19,8 @@ public class dragonAi : MonoBehaviour {
     public float maxFizzyoPressure = 0.5f;
 
    
-    void Start () {
+    void Start ()
+    {
         //load our sensor calibration if already set
         if (PlayerPrefs.HasKey("Max Fizzyo Pressure"))
         {
@@ -75,15 +77,10 @@ public class dragonAi : MonoBehaviour {
             started = true;
         }
         fireEffect.startLifetime = (pressure / maxFizzyoPressure) * maxFireLength;
-<<<<<<< HEAD
-=======
         if (fireEffect.startLifetime > maxFireLength)
         {
             fireEffect.startLifetime = maxFireLength;
         }
-        
-
->>>>>>> origin/master
         if(started == true && breathComplete == true)
         {
             fireEffect.gameObject.SetActive(false);
@@ -91,8 +88,7 @@ public class dragonAi : MonoBehaviour {
             BreathsText.text = ("Breaths: " + BreathsCount);
             if (BreathsCount == 5)
             {
-                GameStart Start;
-                Start.Reset();
+                GameObject.Find("/GlobalController").GetComponent<GameStart>().Reset();
                 BreathsText.text = ("Breaths: " + BreathsCount);
             }
             stateManager.changeState(StateManager.State.Moving);
