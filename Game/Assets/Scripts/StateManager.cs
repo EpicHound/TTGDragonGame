@@ -22,13 +22,14 @@ public class StateManager : MonoBehaviour {
         currentState = State.Idle;
         breath.ExhalationComplete += Breath_ExhalationComplete;
 	}
-
+    public GameObject great;
     private void Breath_ExhalationComplete(object sender, Fizzyo.ExhalationCompleteEventArgs e)
     {
         ai.breathComplete = true;
         if (e.IsBreathGood)
         {
             Score.UpdateScore();
+            great.SetActive(true);
         }
     }
 
