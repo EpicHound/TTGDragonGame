@@ -23,7 +23,6 @@ public class StartCalibrate : MonoBehaviour
     {
         // Create new stopwatch.
         blowingStopwatch = new System.Diagnostics.Stopwatch();
-        StartText.text = "" + countdownToStart;
     }
     bool started = false;
     // Update is called once per frame

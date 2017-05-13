@@ -17,7 +17,7 @@ Platform assembly: C:\GitHub\TTGDragonGame\Game\Dragondoom_Data\Managed\UnityEng
 Loading C:\GitHub\TTGDragonGame\Game\Dragondoom_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\GitHub\TTGDragonGame\Game\Dragondoom_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
 Loading C:\GitHub\TTGDragonGame\Game\Dragondoom_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-- Completed reload, in  0.110 seconds
+- Completed reload, in  0.028 seconds
 Platform assembly: C:\GitHub\TTGDragonGame\Game\Dragondoom_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\GitHub\TTGDragonGame\Game\Dragondoom_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
@@ -30,64 +30,53 @@ desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.354809 ms
+UnloadTime: 1.405807 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.406378 ms
+UnloadTime: 0.264931 ms
 
 Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 255.
-Total: 0.125409 ms (FindLiveObjects: 0.026621 ms CreateObjectMapping: 0.011225 ms MarkObjects: 0.055808 ms  DeleteObjects: 0.027262 ms)
+Total: 0.124447 ms (FindLiveObjects: 0.015716 ms CreateObjectMapping: 0.011225 ms MarkObjects: 0.063827 ms  DeleteObjects: 0.029187 ms)
 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.202387 ms
+UnloadTime: 0.213292 ms
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 281.
-Total: 0.134390 ms (FindLiveObjects: 0.022772 ms CreateObjectMapping: 0.011225 ms MarkObjects: 0.093335 ms  DeleteObjects: 0.006735 ms)
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 277.
+Total: 0.173520 ms (FindLiveObjects: 0.042658 ms CreateObjectMapping: 0.020848 ms MarkObjects: 0.102316 ms  DeleteObjects: 0.006735 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at StartCalibrate.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.257193 ms
+UnloadTime: 4.032674 ms
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 446.
-Total: 0.262045 ms (FindLiveObjects: 0.033677 ms CreateObjectMapping: 0.012829 ms MarkObjects: 0.157804 ms  DeleteObjects: 0.057733 ms)
-
-Set max fizzyo pressure val to: 1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.499714 ms
-
-Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 425.
-Total: 0.237668 ms (FindLiveObjects: 0.028545 ms CreateObjectMapping: 0.013791 ms MarkObjects: 0.182501 ms  DeleteObjects: 0.012188 ms)
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 469.
+Total: 0.314326 ms (FindLiveObjects: 0.031753 ms CreateObjectMapping: 0.022451 ms MarkObjects: 0.177690 ms  DeleteObjects: 0.081788 ms)
 
 Set max fizzyo pressure val to: 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.640840 ms
+UnloadTime: 1.003598 ms
 
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 430.
-Total: 0.180897 ms (FindLiveObjects: 0.030791 ms CreateObjectMapping: 0.012188 ms MarkObjects: 0.135031 ms  DeleteObjects: 0.002886 ms)
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 448.
+Total: 0.317854 ms (FindLiveObjects: 0.054846 ms CreateObjectMapping: 0.029508 ms MarkObjects: 0.218103 ms  DeleteObjects: 0.013791 ms)
 
 Set max fizzyo pressure val to: 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.661046 ms
+UnloadTime: 0.982108 ms
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 430.
-Total: 0.182501 ms (FindLiveObjects: 0.018923 ms CreateObjectMapping: 0.012188 ms MarkObjects: 0.145937 ms  DeleteObjects: 0.005131 ms)
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 453.
+Total: 0.257875 ms (FindLiveObjects: 0.053563 ms CreateObjectMapping: 0.028225 ms MarkObjects: 0.172558 ms  DeleteObjects: 0.002886 ms)
 
 Set max fizzyo pressure val to: 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.715252 ms
-
-Unloading 49 unused Assets to reduce memory usage. Loaded Objects now: 277.
-Total: 0.262366 ms (FindLiveObjects: 0.012508 ms CreateObjectMapping: 0.012188 ms MarkObjects: 0.110014 ms  DeleteObjects: 0.127334 ms)
 
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 25cc -> priority: 1 
+  Thread -> id: 3f0c -> priority: 1 
