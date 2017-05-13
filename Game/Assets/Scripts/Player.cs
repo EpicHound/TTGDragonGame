@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     float destXSpeed = 0.02f;
     private float smoothing = 0.03f;
     private float xSpeed = 0f;
-
+  
     // Use this for initialization
     void Start()
     {

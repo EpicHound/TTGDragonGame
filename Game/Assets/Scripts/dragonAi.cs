@@ -66,33 +66,7 @@ public class dragonAi : MonoBehaviour {
     {
         float pressure = Fizzyo.FizzyoDevice.Instance().Pressure();
         
-        //if (enemies.Count == 0)
-        //{
-        // enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
-        //}
-        //else
-        //{
-        //    for (int i = 0; i < enemies.Count; i++)
-        //    {
-        //        float length = (pressure / maxFizzyoPressure) * 10;
-        //        if(length > 10)
-        //        {
-        //            length = 10;
-        //        }
-        //        if (enemyIsHit(enemies[i],length))
-        //        {
-        //            //kill
-        //            enemies[i].GetComponent<wizardAi>().killed();
-        //            //enemies.RemoveAt(i);
-        //            //i -= 1;
-        //        }
-        //        else
-        //        {
-        //            //enemies.RemoveAt(i);
-        //            //i -= 1;
-        //        }
-        //    }
-      //  }
+      
        
         
         if(stateManager.breath.IsExhaling && started == false)

@@ -9,11 +9,16 @@ public class wizardAi : MonoBehaviour {
     public Vector3 max;
     Vector3 randomPos;
     Animator anim;
+    Collider col;
+    public Camera cam;
 	// Use this for initialization
 	void Start () {
+     //   min = cam.ScreenToWorldPoint(new Vector3(0, cam.pixelHeight, cam.nearClipPlane));
+      //  max = cam.ScreenToWorldPoint(new Vector3(cam.pixelWidth, cam.pixelHeight, cam.nearClipPlane));
         moving = true;
         anim = GetComponent<Animator>();
-        randomPos = new Vector3(Random.Range(min.x, max.x), Random.Range(min.y, max.y), 0);  
+        randomPos = new Vector3(Random.Range(min.x, max.x), Random.Range(min.y, max.y), 0);
+        col = GetComponent<Collider>();
 	}
 	
 	// Update is called once per frame
@@ -27,7 +32,7 @@ public class wizardAi : MonoBehaviour {
     {
         transform.tag = "Dead";
         anim.SetBool("isAlive", false);
-        Destroy(gameObject);
+        col.enabled = false;
     }
     bool started = false;
     bool moving;
