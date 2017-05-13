@@ -25,7 +25,7 @@ public class StartCalibrate : MonoBehaviour
         blowingStopwatch = new System.Diagnostics.Stopwatch();
         StartText.text = "" + countdownToStart;
     }
-
+    bool started = false;
     // Update is called once per frame
     void Update()
     {
@@ -40,26 +40,29 @@ public class StartCalibrate : MonoBehaviour
         float y = PressureBar.transform.localPosition.y + ((destHeight - PressureBar.transform.localPosition.y) * smoothing);
         PressureBar.transform.localPosition = new Vector3(PressureBar.transform.localPosition.x, y, PressureBar.transform.localPosition.z);
 
-
+        
         if (pressure > minPressureThreshold)
         {
+            started = true;
             maxPressureReading = pressure;
             blowingStopwatch.Start();
             int timeToStart = (int)(countdownToStart - (blowingStopwatch.ElapsedMilliseconds / 1000));
 
             if (timeToStart > 0)
             {
-                StartText.text = "" + timeToStart;
+              //  StartText.text = "" + timeToStart;
             }
             else
             {
                 //Save the max recorded pressure to use to scale sensor input during gameplay.
-                PlayerPrefs.SetFloat("Max Fizzyo Pressure", maxPressureReading);
-                SceneManager.LoadScene("JetpackLevel");
+               
             }
         }
-        else
+        else if( started == true)
         {
+            PlayerPrefs.SetFloat("Max Fizzyo Time", blowingStopwatch.ElapsedMilliseconds / 1000);
+            PlayerPrefs.SetFloat("Max Fizzyo Pressure", maxPressureReading);
+            SceneManager.LoadScene("JetpackLevel");
             blowingStopwatch.Stop();
         }
 

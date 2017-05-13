@@ -14,11 +14,13 @@ public class StateManager : MonoBehaviour {
     public GameObject wizard;
     float maxBreathLength = 5f;
     // public Fizzyo.BreathRecogniser breath = new Fizzyo.BreathRecogniser(PlayerPrefs.GetFloat("Max Fizzyo Pressure"), PlayerPrefs.GetFloat("Max Fizzyo Length"));
-    public Fizzyo.BreathRecogniser breath = new Fizzyo.BreathRecogniser(0.6f, 5);
+    public Fizzyo.BreathRecogniser breath;
     public Fizzyo.BreathRecogniser lastBreath;
     // Use this for initialization
     void Start () {
-        
+        float maxTime = PlayerPrefs.GetFloat("Max Fizzyo Time");
+        float maxPressure = PlayerPrefs.GetFloat("Max Fizzyo Pressure");
+        breath = new Fizzyo.BreathRecogniser(maxPressure, maxBreathLength);
         currentState = State.Idle;
         breath.ExhalationComplete += Breath_ExhalationComplete;
 	}
